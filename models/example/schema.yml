@@ -1,0 +1,21 @@
+
+version: 2
+
+models:
+    - name: raw_f4101
+      description: "The view contains the raw data of the products , and additional column to regroup all fields as variant col"
+      columns:
+          - name: RAW_DATA
+            description: "contains all the cols as variant field"
+            tests:
+                - unique
+                - not_null
+
+    - name: v_stg_f4101
+      description: "this view contains the raw data, the hashed keys and hashdiff"
+      columns:
+          - name: PRODUCT_PK
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
